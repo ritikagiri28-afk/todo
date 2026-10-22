@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 3rem 1rem;
+    background: #f3f6fb;
+    color: #1f2937;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #e5eaf2;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgb(31 41 55 / 8%);
+}
+
+h1 {
+    margin: 0 0 1.5rem;
+    color: #172554;
+    font-size: 1.8rem;
+}
+
+#todo-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.6rem;
+}
+
+#todo-form label {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#todo-input {
+    min-width: 0;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+}
+
+#todo-input:focus {
+    border-color: #2563eb;
+    outline: 3px solid rgb(37 99 235 / 16%);
+}
+
+button {
+    padding: 0.7rem 1rem;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+button:focus-visible,
+#todo-list input:focus-visible {
+    outline: 3px solid rgb(37 99 235 / 35%);
+    outline-offset: 2px;
+}
+
+#todo-list {
+    display: grid;
+    gap: 0.65rem;
+    margin: 1.5rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+#todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid #e5eaf2;
+    border-radius: 8px;
+}
+
+#todo-list li label {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+#todo-list input:checked + label {
+    color: #64748b;
+    text-decoration: line-through;
+}
+
+#todo-list li button {
+    padding: 0.45rem 0.7rem;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 0.85rem;
+}
+
+#todo-list li button:hover {
+    background: #fecaca;
+}
+
+#empty-message {
+    color: #64748b;
+    text-align: center;
+}
+
+@media (max-width: 420px) {
+    main {
+        padding: 1.25rem;
+    }
+
+    #todo-form {
+        grid-template-columns: 1fr;
+    }
+}
